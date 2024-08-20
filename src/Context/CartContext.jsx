@@ -83,9 +83,9 @@ export function CartcontextProvider({ children }) {
         
     }
 }
-  useEffect(() => {
-    getLoggedCart();
-  }, []);
+  // useEffect(() => {
+  //   getLoggedCart();
+  // }, []);
 
   return (
     <CartContext.Provider value={{addToCart, clearcart, cartItems,setCartItems, getLoggedCart , updateQty , deleteFromCart,headers, cartId, cartItemsCount}}>
