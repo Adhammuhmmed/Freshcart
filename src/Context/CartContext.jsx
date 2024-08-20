@@ -44,9 +44,13 @@ export function CartcontextProvider({ children }) {
       setCartItemsCount(data?.numOfCartItems)
       setCardId(data.data._id)    
       return data;
+
     } catch (error) {
 
     }
+
+
+
   }
 
 
