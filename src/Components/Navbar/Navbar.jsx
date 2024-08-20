@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/freshcart-logo.svg";
 import { UserContext } from "../../Context/UserContext";
@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 import { jwtDecode } from "jwt-decode";
 
 export default function Navbar() {
-  let { name } = jwtDecode(localStorage.getItem("userToken"));
   let { cartItemsCount } = useContext(CartContext);
 
   let navgite = useNavigate();
@@ -16,6 +15,13 @@ export default function Navbar() {
     setUserLogin(null);
     navgite("/login");
     toast("Good Bye!");
+  }
+
+  let userName = "";
+
+  if (localStorage.getItem("userToken")) {
+    let { name } = jwtDecode(localStorage.getItem("userToken"));
+    userName = name;
   }
   let { userLogin, setUserLogin } = useContext(UserContext);
   return (
@@ -108,7 +114,7 @@ export default function Navbar() {
               <>
                 <li>
                   <span className="user-name font-semibold w-fit text-gray-700">
-                    {name}
+                    {userName}
                   </span>
                 </li>
 

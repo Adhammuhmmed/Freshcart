@@ -4,13 +4,11 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
 export default function ProductedRoute(props) {
-      if (localStorage.getItem('userToken')) {
-          return props.children
-      } else {
-          return <Navigate to={'/login'}/>
-      }
-return <>
-        
-  </>
-
+  let x = localStorage.getItem("userToken");
+  if (localStorage.getItem("userToken")) {
+    return props.children;
+  } else {
+    return <Navigate to={"/login"} />;
+  }
+  return <></>;
 }

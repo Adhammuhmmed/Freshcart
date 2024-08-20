@@ -1,23 +1,32 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 
 export default function AllOrders() {
   let { clearcart } = useContext(CartContext);
+    let userId = ''
+  if(localStorage.getItem('userToken')) {
+    let { id } = jwtDecode(localStorage.getItem("userToken"));
+    userId = id
+  }
 
-  let { id } = jwtDecode(localStorage.getItem("userToken"));
-  async function getOrders(id) {
+
+  
+
+  // console.log(localStorage.getItem('userToken'));
+  
+  async function getOrders(userId) {
     try {
       let { data } = await axios.get(
-        `https://ecommerce.routemisr.com/api/v1/orders/user/${id}`
+        `https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`
       );
       clearcart();
     } catch (error) {}
   }
 
   useEffect(() => {
-    getOrders(id);
+    getOrders(userId);
   }, []);
 
   return (
