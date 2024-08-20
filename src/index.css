@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.row {
+  @apply flex flex-wrap py-5 px-3 items-center;
+}
+
+.slider-img {
+  height: 200px;
+}
+
+.product-category img {
+  height: 200px;
+}
+
+.footer {
+  border-top: 1px solid rgba(128, 128, 128, 0.644);
+}
+
+.nav {
+  box-shadow: 0 2px 2px 0 rgba(22, 163, 74, 0.685);
+}
+
+.links .active {
+  @apply bg-transparent text-green-600 rounded-md md:bg-green-600 md:text-white md:p-2;
+}
+
+.cart-icon:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s;
+}
+.wish-icon:hover {
+  transform: scale(1.5);
+  transition: transform 0.5s;
+}
+
+.product-brand:hover {
+  box-shadow: 0px 3px 8px #16a34a !important;
+}
+
+.active {
+  @apply text-red-700;
+}
+
+.user-name {
+  text-transform: capitalize;
+}
