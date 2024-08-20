@@ -2,7 +2,7 @@
   "name": "freshcart",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Adhammuhmmed.github.io/Feshcart",
+  "homepage": "https://Adhammuhmmed.github.io/freshcart",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
