@@ -32,20 +32,20 @@ export function CartcontextProvider({ children }) {
     } catch (error) {}
   }
 
-  async function getLoggedCart() {
-    try {
-      let { data } = await axios.get(
-        `https://ecommerce.routemisr.com/api/v1/cart`,
-        {
-          headers,
-        }
-      ); 
+  // async function getLoggedCart() {
+  //   try {
+  //     let { data } = await axios.get(
+  //       `https://ecommerce.routemisr.com/api/v1/cart`,
+  //       {
+  //         headers,
+  //       }
+  //     ); 
 
-      setCartItemsCount(data?.numOfCartItems)
-      setCardId(data.data._id)    
-      return data;
-    } catch (error) {}
-  }
+  //     setCartItemsCount(data?.numOfCartItems)
+  //     setCardId(data.data._id)    
+  //     return data;
+  //   } catch (error) {}
+  // }
 
 
   async function updateQty(productId, count) {
