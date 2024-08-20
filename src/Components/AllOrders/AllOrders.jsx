@@ -10,13 +10,8 @@ export default function AllOrders() {
     let { id } = jwtDecode(localStorage.getItem("userToken"));
     userId = id
   }
-
-
   
-
-  // console.log(localStorage.getItem('userToken'));
-  
-  async function getOrders(userId) {
+  async function getOrders() {
     try {
       let { data } = await axios.get(
         `https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`
@@ -26,7 +21,7 @@ export default function AllOrders() {
   }
 
   useEffect(() => {
-    getOrders(userId);
+    getOrders();
   }, []);
 
   return (
