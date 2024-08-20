@@ -27,7 +27,7 @@ function App() {
   let queryClient = new QueryClient();
   let routers = createBrowserRouter([
     {
-      path: "",
+      path: "freshcart",
       element: <Layout />,
       children: [
         {
