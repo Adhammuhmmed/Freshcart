@@ -23,9 +23,6 @@ import ResetCode from "./Components/ResetCode/ResetCode";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 
-
-
-
 function App() {
   let queryClient = new QueryClient();
   let routers = createBrowserRouter([
@@ -126,7 +123,6 @@ function App() {
         },
         { path: "login", element: <Login /> },
         { path: "register", element: <Register /> },
-        
       ],
     },
   ]);
