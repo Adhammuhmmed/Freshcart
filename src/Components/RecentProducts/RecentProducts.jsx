@@ -67,7 +67,7 @@ export default function RecentProducts() {
     <>
       <div className="row md:mt-24">
         {data?.data.data.map((product) => (
-          <div key={product._id} className="  w-full md:w-1/4 lg:w-1/5 p-4">
+          <div key={product._id} className="  w-1/2 md:w-1/4 lg:w-1/5 p-4">
             <Link
               to={`/Productdetails/${product._id}/${product.category.name}`}
             >

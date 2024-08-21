@@ -29,7 +29,6 @@ export default function ResetPassword() {
       toast.success("Success");
       window.location.href = "./login";
     } catch (error) {
-      console.log(error);
       toast.error(error?.response?.data.message);
       setIsLoading(false);
     }
@@ -44,7 +43,7 @@ export default function ResetPassword() {
   });
   return (
     <>
-      <div className="continar mx-auto py-16 md:mt-20">
+      <div className="continar mx-auto py-16 md:mt-20 p-4">
         <div className="max-w-md md:max-w-lg mx-auto">
           <h2 className="mb-10 text-green-600 text-3xl font-bold">
             Reset Password:{" "}

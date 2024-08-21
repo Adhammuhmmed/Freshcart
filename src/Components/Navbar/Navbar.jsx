@@ -26,7 +26,7 @@ export default function Navbar() {
   let { userLogin, setUserLogin } = useContext(UserContext);
   return (
     <>
-      <nav className="nav py-2 bg-white relative top-0 left-0 right-0 z-50 md:fixed">
+      <nav className="nav py-2 bg-white relative top-0 left-0 right-0 z-50 md:fixed px-2">
         <div className="container py-4 md:flex  items-center justify-between mx-auto">
           <div className="flex items-center">
             {" "}

@@ -76,7 +76,7 @@ export default function ProductDetails() {
 
   return (
     <>
-      <div className="row flex-col sm:flex-row md:mt-20">
+      <div className="row flex-col sm:flex-row md:mt-20 py-3">
         <div className="  w-1/4">
           <Slider {...settings}>
             {productDetails?.images.map((src) => (
@@ -89,7 +89,7 @@ export default function ProductDetails() {
             ))}
           </Slider>
         </div>
-        <div className="w-3/4 px-5">
+        <div className="w-3/4 px-5 py-3">
           <p className="font-semibold text-gray-800">{productDetails?.title}</p>
           <p className="font-normal  text-gray-600">
             {productDetails?.description}
@@ -137,7 +137,7 @@ export default function ProductDetails() {
 
       <div className="row mt-4">
         {productRelatedCategory.map((product) => (
-          <div key={product._id} className=" w-full md:w-1/5 lg:w-1/5 p-4">
+          <div key={product._id} className="  w-1/2  md:w-1/5 lg:w-1/5 p-4">
             <Link
               to={`/Productdetails/${product._id}/${product.category.name}`}
             >

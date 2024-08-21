@@ -18,12 +18,14 @@ body {
   height: 200px;
 }
 
+
 .footer {
   border-top: 1px solid rgba(128, 128, 128, 0.644);
 }
 
 .nav {
-  box-shadow: 0 2px 2px 0 rgba(22, 163, 74, 0.685);
+  box-shadow: 0 2px 2px 0 rgba(128, 128, 128, 0.644);
+;
 }
 
 .links .active {

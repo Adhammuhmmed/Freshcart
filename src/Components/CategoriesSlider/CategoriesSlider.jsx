@@ -9,7 +9,7 @@ export default function CategoriesSlider() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 3,
     autoplaySpeed: 1500,
   };
@@ -27,7 +27,7 @@ export default function CategoriesSlider() {
   }, []);
   return (
     <>
-      <div className="py-5">
+      <div className="py-5 px-3">
         <h2 className="text-gray-700 font-semibold py-4">Shop Popular categories</h2>
         <Slider {...settings}>
           {category.map((category) => (

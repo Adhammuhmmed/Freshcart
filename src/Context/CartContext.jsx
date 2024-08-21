@@ -6,12 +6,11 @@ export let CartContext = createContext(0);
 
 export function CartcontextProvider({ children }) {
   let [cartItems, setCartItems] = useState(null);
-  let [cartId,setCardId] = useState('')
-  let [cartItemsCount,setCartItemsCount] = useState('')
+  let [cartId, setCardId] = useState("");
+  let [cartItemsCount, setCartItemsCount] = useState("");
   let headers = {
     token: localStorage.getItem("userToken"),
   };
-
 
   async function addToCart(productId) {
     try {
@@ -26,9 +25,11 @@ export function CartcontextProvider({ children }) {
       );
       toast.success(data.message);
       setCartItems(data);
-      setCartItemsCount(data?.numOfCartItems)
-      setCardId(data.data._id)
-      setFavIcon(<i className="iconHeart fa-solid fa-heart text-red-700 text-2xl wish-icon"></i>)
+      setCartItemsCount(data?.numOfCartItems);
+      setCardId(data.data._id);
+      setFavIcon(
+        <i className="iconHeart fa-solid fa-heart text-red-700 text-2xl wish-icon"></i>
+      );
     } catch (error) {}
   }
 
@@ -39,20 +40,13 @@ export function CartcontextProvider({ children }) {
         {
           headers,
         }
-      ); 
+      );
 
-      setCartItemsCount(data?.numOfCartItems)
-      setCardId(data.data._id)    
+      setCartItemsCount(data?.numOfCartItems);
+      setCardId(data.data._id);
       return data;
-
-    } catch (error) {
-
-    }
-
-
-
+    } catch (error) {}
   }
-
 
   async function updateQty(productId, count) {
     try {
@@ -61,40 +55,53 @@ export function CartcontextProvider({ children }) {
         { count },
         { headers }
       );
-      setCardId(data.data._id)  
-      setCartItemsCount(data?.numOfCartItems)  
+      setCardId(data.data._id);
+      setCartItemsCount(data?.numOfCartItems);
       return data;
     } catch (error) {}
   }
 
   async function deleteFromCart(productId, count) {
-        try {
-            let {data} = await axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,{headers})
-            setCartItemsCount(data?.numOfCartItems)
-            return data;
-        } catch (error) {
-            
-        }
+    try {
+      let { data } = await axios.delete(
+        `https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
+        { headers }
+      );
+      setCartItemsCount(data?.numOfCartItems);
+      return data;
+    } catch (error) {}
   }
-
-
 
   async function clearcart() {
     try {
-        let {data} = await axios.delete(`https://ecommerce.routemisr.com/api/v1/cart`,{headers})
-        setCartItemsCount(data?.numOfCartItems)
-        setCartItems(null);
-        return data;
-    } catch (error) {
-        
-    }
-}
-  // useEffect(() => {
-  //   getLoggedCart();
-  // }, []);
+      let { data } = await axios.delete(
+        `https://ecommerce.routemisr.com/api/v1/cart`,
+        { headers }
+      );
+      setCartItemsCount(data?.numOfCartItems);
+      setCartItems(null);
+      return data;
+    } catch (error) {}
+  }
+  useEffect(() => {
+    getLoggedCart();
+  }, []);
 
   return (
-    <CartContext.Provider value={{addToCart, clearcart, cartItems,setCartItems, getLoggedCart , updateQty , deleteFromCart,headers, cartId, cartItemsCount}}>
+    <CartContext.Provider
+      value={{
+        addToCart,
+        clearcart,
+        cartItems,
+        setCartItems,
+        getLoggedCart,
+        updateQty,
+        deleteFromCart,
+        headers,
+        cartId,
+        cartItemsCount,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

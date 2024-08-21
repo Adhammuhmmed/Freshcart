@@ -49,7 +49,7 @@ export default function Register() {
           }
       )
   return <>
-          <div className="continar mx-auto md:my-24 ">
+          <div className="continar mx-auto md:my-24 p-4">
               <div className="max-w-md md:max-w-lg mx-auto">
                     <h2 className="mb-10 text-green-600 text-3xl font-bold">Register Now:</h2>
                    <form className="" onSubmit={formik.handleSubmit}>
@@ -101,7 +101,7 @@ export default function Register() {
                     </div>:null}
                   
                       <div className="flex flex-col items-center sm:flex-row">
-                      <button type="submit" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                      <button type="submit" className="text-white my-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                     {isLoading?<i className="fa-solid fa-spinner fa-spin"></i>:'Register'}
                      </button>
                      <p className="ps-2">You have an account?<NavLink className="font-semibold" to={'/login'}>Login Now</NavLink></p>

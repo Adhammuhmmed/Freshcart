@@ -13,7 +13,6 @@ export default function Categories() {
     refetchOnMount: false,
     refetchInterval: 5000,
   });
-  console.log(data?.data.data);
 
   if (isLoading) {
     return (

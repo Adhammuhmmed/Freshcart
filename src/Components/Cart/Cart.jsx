@@ -14,8 +14,6 @@ export default function Cart() {
     let response = await getLoggedCart();
     setCartItems(response?.data);
     setLoading(false);
-    console.log(response?.data._id);
-    
   }
   async function updateQtyCart(id, count) {
     if (count > 0) {
